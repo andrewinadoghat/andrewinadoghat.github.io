@@ -19,11 +19,10 @@
 
 	<script id="bookTable_template" type="text/html">
 		<table>
-		<tr><th 
 		<tr><th class="date">date finished</th><th class="">title</th><th>author</th><th>format</th><th>length</th><th>language</th><th>gerne</th><th>new?</th></tr>
 		{{#rows}}
-			<tr><td>{{datefinished}}</td><td>{{title}}</td><td>{{author}}</td><td>{{format}}</td><td>{{length}}</td><td>{{language}}</td><td>{{gerne}}</td><td>{{new}}</td>
-		{{rows}}
+			<tr><td>{{datefinished}}</td><td>{{title}}</td><td>{{author}}</td><td>{{format}}</td><td>{{length}}</td><td>{{language}}</td><td>{{gerne}}</td><td>{{new/reread}}</td></tr>
+		{{/rows}}
 		</table>
 	</script>
 
@@ -34,8 +33,9 @@
     }) 
       
     function showInfo(data) {
-      var tableOptions = {"data": data, "tableDiv": "#bookTable"}
+      var tableOptions = {"data": data, "pagination": 10, "tableDiv": "#bookTable"}
       Sheetsee.makeTable(tableOptions)
+      Sheetsee.initiateTableFilter(tableOptions)
     }
   </script>
 </body>
