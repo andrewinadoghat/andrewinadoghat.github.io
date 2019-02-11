@@ -30,7 +30,7 @@ function getCurrentYear() {
 function countCurrentYear(data, curYr) {
     var books = []
     data.forEach(function getBooks(row) {
-        if (row.datefinished = "") return
+        if (row.datefinished === "") return
         var year = parseInt(row.datefinished.split('/')[2])
         if (year === curYr) books.push(year)
     })
