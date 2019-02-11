@@ -9,7 +9,7 @@
     <script type="text/javascript" src='./js/tabletop.js'></script>
     <script type="text/javascript" src='./js/sheetsee.js'></script>
     <script type="text/javascript" src='./js/site.js'></script>
-    <link media="screen" rel="stylesheet" type="text/css" href="./css/style.css"> 
+    <link media="screen" rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   <style>
     #Pagination {border-top: 4px solid #CCF4FF; margin: 10px 0px; padding-top: 10px; display: inline-block;}
@@ -20,7 +20,7 @@
 <body>
   <div id="wrapper">
     <div id="title"></div>
-    
+
     <div id="fliters" class="container">
       <input id="bookSearch" type="text" placeholder="Search for.."></input>
       <span class="clear sml-button">Clear</span>
@@ -32,11 +32,12 @@
     <ul class="nav">
       <li>POWERED BY <a href="http://jlord.gitub.io/sheetsee.js" target="_blank">SHEETSEE.JS</a></li>
     </ul>
-    
+
     </div><!-- end wrapper -->
-    
+
     <script id="title" type="text/html">
-      <h1><span class="highlighted">{{numBooks}}</span> Books read</h1>
+      <h1><span class="highlighted">{{numBooks}}</span> Books read since 2016</h1>
+      <h2><span class="highlighted">{{numBooksYr}}</span> Books finished in {{currentYear}}</h2>
     </script>
 
     <script id="gernes" type="text/html">
@@ -44,7 +45,7 @@
 	<span href="#" class="gerne sml-button">{{.}}</span>
       {{/rows}}
     </script>
-    
+
     <script id="bookTable_template" type="text/html">
       <table>
       <tr><th class="fancy">&#8470;</th><th class="date">date finished</th><th class="">title</th><th>author</th><th>format</th><th>length</th><th>language</th><th>gerne</th><th>new?</th></tr>
@@ -66,15 +67,15 @@
     document.addEventListener('DOMContentLoaded', function() {
       var URL = "1fM30QPX42RVvqQcNk8LbF1mNFJRmJ7meYKb7gffg9TE"
       Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
-    }) 
-      
+    })
+
     function showInfo(data) {
       var tableOpts = {"data": data.reverse(), "pagination": 100, "tableDiv": "#bookTable", "filterDiv": "#bookSearch"}
       drawGernes(data)
       pageTitle(data)
       Sheetsee.makeTable(tableOpts)
       Sheetsee.initiateTableFilter(tableOpts)
-      
+
       $(document).on("click", ".gerne", function(event){
         var gerne = $(event.target).text()
         var gerneFilter = Sheetsee.getMatches(data, gerne, "gerne")
