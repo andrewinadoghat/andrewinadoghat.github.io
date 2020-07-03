@@ -1,89 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <title>Books I've Read</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src='./js/tabletop.js'></script>
-    <script type="text/javascript" src='./js/sheetsee.js'></script>
-    <script type="text/javascript" src='./js/site.js'></script>
-    <link media="screen" rel="stylesheet" type="text/css" href="./css/style.css">
-  </head>
-  <style>
-    #Pagination {border-top: 4px solid #CCF4FF; margin: 10px 0px; padding-top: 10px; display: inline-block;}
-    #Pagination a {cursor: pointer;}
-    .no-pag {color: #acacac; border: none;}
-    .no-pag:hover {color: #acacac;}
-  </style>
-<body>
-  <div id="wrapper">
-    <div id="title"></div>
+---
+layout: default
+title: Books I've Read
+custom_js:
+- jquery.min.js
+- tabletop.js
+- sheetsee.js
+- site.js
+---
 
-    <div id="fliters" class="container">
-      <input id="bookSearch" type="text" placeholder="Search for.."></input>
-      <span class="clear sml-button">Clear</span>
-      <h3>Gernes: <span id="gernes"></span>
-    </div>
+<div id="wrapper">
+  <div id="title"></div>
 
-    <div id="bookTable"></div>
+  <div id="fliters" class="container">
+    <input id="bookSearch" type="text" placeholder="Search for.."></input>
+    <span class="clear sml-button">Clear</span>
+    <h3>Gernes: <span id="gernes"></span>
+  </div>
 
-    <ul class="nav">
-      <li>POWERED BY <a href="http://jlord.gitub.io/sheetsee.js" target="_blank">SHEETSEE.JS</a></li>
-    </ul>
+  <div id="bookTable"></div>
 
-    </div><!-- end wrapper -->
+  <ul class="nav">
+    <li>POWERED BY <a href="http://jlord.gitub.io/sheetsee.js" target="_blank">SHEETSEE.JS</a></li>
+  </ul>
 
-    <script id="title" type="text/html">
-      <h1><span class="highlighted">{{numBooks}}</span> Books read since 2016</h1>
-      <h2><span class="highlighted">{{numBooksYr}}</span> Books finished in {{currentYear}}</h2>
-    </script>
+  </div><!-- end wrapper -->
 
-    <script id="gernes" type="text/html">
-      {{#rows}}
-	<span href="#" class="gerne sml-button">{{.}}</span>
-      {{/rows}}
-    </script>
-
-    <script id="bookTable_template" type="text/html">
-      <table>
-      <tr><th class="fancy">&#8470;</th><th class="date">date finished</th><th class="">title</th><th>author</th><th>format</th><th>length</th><th>language</th><th>gerne</th><th>new?</th></tr>
-      {{#rows}}
-	<tr class="{{booknum}}"><td class="light-type">{{booknum}}</td>
-	<td class="date">{{datefinished}}</td>
-	<td>{{title}}</td>
-	<td>{{author}}</td>
-	<td>{{format}}</td>
-	<td>{{length}}</td>
-	<td>{{language}}</td>
-	<td>{{gerne}}</td>
-	<td>{{new/reread}}</td></tr>
-      {{/rows}}
-      </table>
-    </script>
-
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-      var URL = "1fM30QPX42RVvqQcNk8LbF1mNFJRmJ7meYKb7gffg9TE"
-      Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
-    })
-
-    function showInfo(data) {
-      var tableOpts = {"data": data.reverse(), "pagination": 100, "tableDiv": "#bookTable", "filterDiv": "#bookSearch"}
-      drawGernes(data)
-      pageTitle(data)
-      Sheetsee.makeTable(tableOpts)
-      Sheetsee.initiateTableFilter(tableOpts)
-
-      $(document).on("click", ".gerne", function(event){
-        var gerne = $(event.target).text()
-        var gerneFilter = Sheetsee.getMatches(data, gerne, "gerne")
-        var tableOpts2 = {"data": gerneFilter.reverse(), "pagination": 100, "tableDiv": "#bookTable"}
-        Sheetsee.makeTable(tableOpts2)
-      })
-    }
+  <script id="title" type="text/html">
+    <h1><span class="highlighted">{{numBooks}}</span> Books read since 2016</h1>
+    <h2><span class="highlighted">{{numBooksYr}}</span> Books finished in {{currentYear}}</h2>
   </script>
-</body>
 
-</html>
+  <script id="gernes" type="text/html">
+    {{#rows}}
+<span href="#" class="gerne sml-button">{{.}}</span>
+    {{/rows}}
+  </script>
+
+  <script id="bookTable_template" type="text/html">
+    <table>
+    <tr><th class="fancy">&#8470;</th><th class="date">date finished</th><th class="">title</th><th>author</th><th>format</th><th>length</th><th>language</th><th>gerne</th><th>new?</th></tr>
+    {{#rows}}
+<tr class="{{booknum}}"><td class="light-type">{{booknum}}</td>
+<td class="date">{{datefinished}}</td>
+<td>{{title}}</td>
+<td>{{author}}</td>
+<td>{{format}}</td>
+<td>{{length}}</td>
+<td>{{language}}</td>
+<td>{{gerne}}</td>
+<td>{{new/reread}}</td></tr>
+    {{/rows}}
+    </table>
+  </script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var URL = "1fM30QPX42RVvqQcNk8LbF1mNFJRmJ7meYKb7gffg9TE"
+    Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+  })
+
+  function showInfo(data) {
+    var tableOpts = {"data": data.reverse(), "pagination": 100, "tableDiv": "#bookTable", "filterDiv": "#bookSearch"}
+    drawGernes(data)
+    pageTitle(data)
+    Sheetsee.makeTable(tableOpts)
+    Sheetsee.initiateTableFilter(tableOpts)
+
+    $(document).on("click", ".gerne", function(event){
+      var gerne = $(event.target).text()
+      var gerneFilter = Sheetsee.getMatches(data, gerne, "gerne")
+      var tableOpts2 = {"data": gerneFilter.reverse(), "pagination": 100, "tableDiv": "#bookTable"}
+      Sheetsee.makeTable(tableOpts2)
+    })
+  }
+</script>
+
+
+

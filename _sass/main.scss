@@ -1,4 +1,13 @@
+.current {
+	color: green;
+}
+
 body {font-family: Montserrat; font-size: 13px; padding: 10px 0px 40px 0px; color: #333;}
+
+#Pagination {border-top: 4px solid #CCF4FF; margin: 10px 0px; padding-top: 10px; display: inline-block;}
+    #Pagination a {cursor: pointer;}
+    .no-pag {color: #acacac; border: none;}
+    .no-pag:hover {color: #acacac;}
 
 h1 {font-size: 48px; margin-bottom: 20px;}
 .highlighted {color: #186A7D; opacity: 1; transition: opacity .25s ease-in-out;}
@@ -39,4 +48,3 @@ input {margin: 12px 0px; border: none; border-bottom: 1px solid #333; background
 .button-pressed {background: #0CCC96;}
 
 #info {padding: 30px 0px;}
-
