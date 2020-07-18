@@ -23,32 +23,32 @@ custom_js:
     <li>POWERED BY <a href="http://jlord.gitub.io/sheetsee.js" target="_blank">SHEETSEE.JS</a></li>
   </ul>
 
-  </div><!-- end wrapper -->
+</div><!-- end wrapper -->
 {% raw %}
-  <script id="title" type="text/html">
-    <h1><span class="highlighted">{{numBooks}}</span> Books read since 2016</h1>
-    <h2><span class="highlighted">{{numBooksYr}}</span> Books finished in {{currentYear}}</h2>
-  </script>
+<script id="title" type="text/html">
+  <h1><span class="highlighted">{{numBooks}}</span> Books read since 2016</h1>
+  <h2><span class="highlighted">{{numBooksYr}}</span> Books finished in {{currentYear}}</h2>
+</script>
 
-  <script id="gernes" type="text/html">
+<script id="gernes" type="text/html">
     {{#rows}}
-<span href="#" class="gerne sml-button">{{.}}</span>
+    <span href="#" class="gerne sml-button">{{.}}</span>
     {{/rows}}
-  </script>
+</script>
 
-  <script id="bookTable_template" type="text/html">
+<script id="bookTable_template" type="text/html">
     <table>
-    <tr><th class="fancy">&#8470;</th><th class="date">date finished</th><th class="">title</th><th>author</th><th>format</th><th>length</th><th>language</th><th>gerne</th><th>new?</th></tr>
+    <tr><th class="fancy">&#8470;</th><th class="date">date finished</th><th>title</th><th>author</th><th>format</th><th>length</th><th>language</th><th>gerne</th><th>new?</th></tr>
     {{#rows}}
-<tr class="{{booknum}}"><td class="light-type">{{booknum}}</td>
-<td class="date">{{datefinished}}</td>
-<td>{{title}}</td>
-<td>{{author}}</td>
-<td>{{format}}</td>
-<td>{{length}}</td>
-<td>{{language}}</td>
-<td>{{gerne}}</td>
-<td>{{new/reread}}</td></tr>
+    <tr class="{{booknum}}"><td class="light-type">{{booknum}}</td>
+    <td class="date">{{datefinished}}</td>
+    <td>{{title}}</td>
+    <td>{{author}}</td>
+    <td>{{format}}</td>
+    <td>{{length}}</td>
+    <td>{{language}}</td>
+    <td>{{gerne}}</td>
+    <td>{{new/reread}}</td></tr>
     {{/rows}}
     </table>
   </script>
@@ -75,5 +75,3 @@ custom_js:
   }
 </script>
 {% endraw %}
-
-
