@@ -1,15 +1,15 @@
-.current {
+/*.current {
 	color: green;
 }
 
 body {font-family: Montserrat; font-size: 13px; padding: 10px 0px 40px 0px; color: #333;}
-
+*/
 #Pagination {border-top: 4px solid #CCF4FF; margin: 10px 0px; padding-top: 10px; display: inline-block;}
     #Pagination a {cursor: pointer;}
     .no-pag {color: #acacac; border: none;}
     .no-pag:hover {color: #acacac;}
 
-h1 {font-size: 48px; margin-bottom: 20px;}
+/*h1 {font-size: 48px; margin-bottom: 20px;}*/
 .highlighted {color: #186A7D; opacity: 1; transition: opacity .25s ease-in-out;}
 .highlighted:hover {opacity: 0.5;}
 a {text-decoration: none; color: #333;}
@@ -20,7 +20,7 @@ p a {color: #186A7D;}
 .dim {color: #acacac;}
 .fancy {font-family: baskerville, garamond, serif; font-weight: lighter; font-style: italic;}
 
-#wrapper {margin: 0px auto; max-width: 900px; padding-top: 40px; }
+/*#wrapper {margin: 0px auto; max-width: 900px; padding-top: 40px; }*/
 
 ul.nav {list-style: none; margin: 0px; padding: 0px; color: #186A7D;}
 ul.nav li {display: inline; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding-right: 4px;}
@@ -31,10 +31,9 @@ ul.nav a:hover {font-weight: 900;}
 #filters {padding: 30px 0px; overflow: auto;}
 #tags {line-height: 25px;}
 
-table {border-spacing: 0px; min-width: 900px; margin: 0 auto;}
+/*table {border-spacing: 0px; min-width: 900px; margin: 0 auto;}*/
 th {padding: 10px}
 td, text {padding: 5px 10px; font-size: 12px; font-weight: lighter; line-height: 18px;}
-td.article a:visited {color: #777;}
 td.date {min-width: 119px;}
 tr {text-align: left; vertical-align: top; padding: 4px 0px;}
 tr:nth-child(2n+2) {background: #eee;}

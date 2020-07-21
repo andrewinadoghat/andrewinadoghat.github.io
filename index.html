@@ -1,17 +1,36 @@
 ---
 layout: default
-title: Andrew James Olson
+title: Home
 ---
 
-<h1>Andrew J. Olson</h1>
-<img src="/assets/images/andrew_new.jpg" alt="Hiking in Switzerland" width="300" /><br>
-Opto-Mechatronics Control Systems Engineer<br>
-<i>andrewjamolson at gmail dot com</i><br>
-<a href="/assets/resume.pdf">Resume</a>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-<footer>
-<ul>
-	<li><a href="http://olson-projects.blogspot.com">My Old Project Blog</a></li>
-	<li><a href="https://github.com/andrewinadoghat">github.com/andrewinadoghat</a></li>
-</ul>
-</footer>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+		{{ post.excerpt }}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>

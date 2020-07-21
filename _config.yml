@@ -1,0 +1,28 @@
+# Dependencies
+markdown:         kramdown
+kramdown:
+  math_engine: mathjax
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Andrew James Olson
+tagline:          ''
+description:      'documenting projects and whatnot'
+url:              http://andrewjamesolson.com
+baseurl:          /
+
+author:
+  name:           'Andrew Olson'
+  github:         https://github.com/andrewinadoghat 
+
+paginate:         5
+
+# Gems
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+
+ 
