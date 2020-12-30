@@ -5,9 +5,7 @@ author: Andrew
 tags: woodworking
 ---
 
-(Originally did this in September but didn't publish until December)
-
-I've been running [moOde](https://moodeaudio.org/) on rPi zero with a HiFi Berry DAC for some time now and I use it as my primary music source for my room. I use it mainly to stream from my phone or listen to Radio Swiss Classic. The out of the box bluetooth support was the main reason I went with moOde over [Volumio](https://volumio.org/). Looks like Volumio might have out of the box bluetooth support now, it's been probably over a year since I set this up. 
+(Originally did this in September but didn't publish until December) I've been running [moOde](https://moodeaudio.org/) on rPi zero with a HiFi Berry DAC for some time now and I use it as my primary music source for my room. I use it mainly to stream from my phone or listen to Radio Swiss Classic. The out of the box bluetooth support was the main reason I went with moOde over [Volumio](https://volumio.org/). Looks like Volumio might have out of the box bluetooth support now, it's been probably over a year since I set this up. 
 
 Anyways I wanted a nice stand for the rPi and DAC that was better than the circuit boards sitting on an ESD bag on my desk. Had some thoughts about making an enclosure for it but in the end I went the simple route. The stand is small piece of mahogany with some holes for standoffs that support the boards. 
 
